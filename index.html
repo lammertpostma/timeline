@@ -6,8 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Lammert Postma - Simple css timeline</title>
-        <meta name="description" content="Personal portfolio">
+        <title>Lammert Postma - CSS Timeline</title>
+        <meta name="description" content="Simple responsive html/css timeline">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="styles/main.css">
@@ -16,7 +16,6 @@
 
 		<div class="wrapper">
 			<ol class="timeline" data-bind="foreach: events">
-				
 			    <li class="timeline-event" data-bind="attr: { 'data-type' : type }">
 					<input type="radio" id="item_1" name="selectedItem" data-bind="attr: { id : 'item_'+$index()}"/>
 			        <label for="item_1" data-bind="attr: { for : 'item_'+$index() }">
