@@ -1,0 +1,65 @@
+/* 	==============================
+		MIXINS
+	============================== */
+
+	/*
+	 	BORDER RADIUS
+		usage: 	.borderRadius(size)   or    .borderRadius(topLeft topRight bottomRight bottomLeft)
+		e.g.:	.borderRadius(4px)
+				.borderRadius(0 0 4px 4px)
+	*/
+	.borderRadius(@radius){
+		-webkit-border-radius: @radius;
+		   -moz-border-radius: @radius;
+			-ms-border-radius: @radius;
+			 -o-border-radius: @radius;
+				border-radius: @radius;
+	}
+
+	/*
+	 	BOX SHADOW
+		usage: 	.boxShadow(fromLeft fromTop size color)
+		e.g: 	.boxShadow(0 0 10px rgba(0,0,0,0.3))
+	 			.boxShadow(inset 2px 2px 10px #666)
+	*/
+	.boxShadow(@shadow){
+		-webkit-box-shadow: @shadow;
+	  	   -moz-box-shadow: @shadow;
+				box-shadow: @shadow;
+	}
+
+	/*
+		BORDER BOX
+		usage:	Padding will not be added to determine the element width.
+		e.g.:	Best usage when you want to add a padding in PX on a element width in %
+	*/
+	.borderBox(){
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+
+	/*
+		CLEARFIX
+		Doesn't accept any floating element before or after te elemement.
+	*/
+	.clearFix(){
+		&:after{
+			content: " ";
+			display: table;
+		};
+		&:after{ clear: both;}
+		*zoom: 1;
+
+	}
+
+
+	/*
+		TRANSITION
+		usage:	.transition(duration)
+	*/
+	.transition(@duration){
+		-webkit-transition: all @duration ease-in-out;
+		   -moz-transition: all @duration ease-in-out;
+				transition: all @duration ease-in-out;
+	}

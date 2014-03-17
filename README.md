@@ -1,4 +1,4 @@
-timeline
+Responsive html/css Timeline
 ========
 
-Simple html/css timeline
+Clean and simple timeline pattern using html and css.

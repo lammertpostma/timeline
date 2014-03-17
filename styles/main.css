@@ -1,0 +1,275 @@
+/* 	==============================
+		MIXINS
+	============================== */
+/*
+	 	BORDER RADIUS
+		usage: 	.borderRadius(size)   or    .borderRadius(topLeft topRight bottomRight bottomLeft)
+		e.g.:	.borderRadius(4px)
+				.borderRadius(0 0 4px 4px)
+	*/
+/*
+	 	BOX SHADOW
+		usage: 	.boxShadow(fromLeft fromTop size color)
+		e.g: 	.boxShadow(0 0 10px rgba(0,0,0,0.3))
+	 			.boxShadow(inset 2px 2px 10px #666)
+	*/
+/*
+		BORDER BOX
+		usage:	Padding will not be added to determine the element width.
+		e.g.:	Best usage when you want to add a padding in PX on a element width in %
+	*/
+/*
+		CLEARFIX
+		Doesn't accept any floating element before or after te elemement.
+	*/
+/*
+		TRANSITION
+		usage:	.transition(duration)
+	*/
+body {
+  text-align: center;
+  background: #25282d;
+  font-family: "Open Sans";
+}
+.wrapper {
+  position: relative;
+}
+.wrapper .wrapper-content {
+  position: relative;
+  padding-top: 100px;
+  background: #25282d;
+}
+.timeline {
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: 60px 50px 0;
+  list-style-type: none;
+  *zoom: 1;
+}
+.timeline:after {
+  content: " ";
+  display: table;
+}
+.timeline:after {
+  clear: both;
+}
+.timeline:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 2px;
+  margin-left: -1px;
+  content: "";
+  background: #fff;
+}
+.timeline input {
+  visibility: hidden;
+  position: absolute;
+}
+@media (max-width: 480px) {
+  .timeline {
+    margin-top: -78px;
+    padding: 60px 5px 0;
+  }
+}
+.timeline-event {
+  position: relative;
+  clear: both;
+  float: left;
+  width: 50%;
+  margin: -40px 0;
+  text-align: right;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.timeline-event .timeline-event-time {
+  display: block;
+  color: #fff;
+  font-size: .8em;
+  font-weight: 300;
+  text-align: right;
+}
+.timeline-event .timeline-event-icon {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  background: #ef2d0d;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.timeline-event .timeline-event-item {
+  position: relative;
+  right: 0;
+  left: 0;
+  margin-right: 40px;
+  padding: 1.5em ;
+  color: #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.timeline-event .timeline-event-item .timeline-event-item-header {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 1.6em;
+  line-height: 40px;
+}
+.timeline-event .timeline-event-item .timeline-event-item-body {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-height: 40px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  color: #9ca5ad;
+  font-weight: 300;
+}
+.timeline-event .timeline-event-item .timeline-event-item-body a {
+  color: #9ca5ad;
+  text-decoration: none;
+  border-bottom: 1px dotted #fff;
+}
+.timeline-event .timeline-event-item .timeline-event-item-body a:hover {
+  border-bottom: 1px solid #fff;
+}
+.timeline-event .timeline-event-item .timeline-event-item-body p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.timeline-event .timeline-event-item .timeline-event-item-body img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+.timeline-event:nth-child(odd):hover .timeline-event-item {
+  left: 20px;
+}
+.timeline-event:nth-child(even) {
+  float: right;
+  text-align: left;
+  margin: -10px 0;
+}
+.timeline-event:nth-child(even) .timeline-event-time {
+  text-align: left;
+}
+.timeline-event:nth-child(even) .timeline-event-icon {
+  left: auto;
+  right: 100%;
+  margin-right: -15px;
+}
+.timeline-event:nth-child(even) .timeline-event-item {
+  margin: 0 0 0 40px;
+}
+.timeline-event:nth-child(even):hover .timeline-event-item {
+  left: -20px;
+}
+.timeline-event input:checked + label .timeline-event-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+}
+.timeline-event input:checked + label .timeline-event-item {
+  left: auto;
+  right: -20px;
+}
+.timeline-event input:checked + label .timeline-event-item .timeline-event-item-body {
+  max-height: 600px;
+}
+.timeline-event input:checked + label .timeline-event-item .timeline-event-item-body p {
+  white-space: normal;
+  text-overflow: none;
+}
+.timeline-event:nth-child(even) input:checked + label .timeline-event-icon {
+  margin-right: -25px;
+}
+.timeline-event:nth-child(even) input:checked + label .timeline-event-item {
+  left: -20px;
+  right: auto;
+}
+[data-type="inspiration"].timeline-event .timeline-event-icon {
+  background: #1197f4;
+}
+[data-type="inspiration"].timeline-event .timeline-event-item-header {
+  color: #1197f4;
+}
+[data-type="project"].timeline-event .timeline-event-icon {
+  background: #04f0e2;
+}
+[data-type="project"].timeline-event .timeline-event-item-header {
+  color: #04f0e2;
+}
+[data-type="work"].timeline-event .timeline-event-icon {
+  background: #00c009;
+}
+[data-type="work"].timeline-event .timeline-event-item-header {
+  color: #00c009;
+}
+[data-type="education"].timeline-event .timeline-event-icon {
+  background: #bdd300;
+}
+[data-type="education"].timeline-event .timeline-event-item-header {
+  color: #bdd300;
+}
+@media (max-width: 700px) {
+  .timeline-event {
+    width: 100%;
+    float: none !important;
+    margin: 0 0 50px 0 !important;
+    clear: both;
+    text-align: left;
+  }
+  .timeline-event .timeline-event-time {
+    position: absolute;
+    left: 50%;
+    margin-left: 25px;
+    margin-top: -28px;
+  }
+  .timeline-event .timeline-event-icon {
+    position: relative;
+    z-index: 10;
+    margin: 20px auto -20px !important;
+    padding: 0;
+    left: auto;
+    right: auto !important;
+    top: 0;
+    text-align: center;
+  }
+  .timeline-event .timeline-event-item {
+    margin: 0 !important;
+    text-align: left !important;
+    background: rgba(37, 40, 45, 0.9);
+  }
+  .timeline-event .timeline-event-item .timeline-event-item-header,
+  .timeline-event .timeline-event-item .timeline-event-item-body {
+    margin-top: -4px;
+  }
+  .timeline-event input:checked + label .timeline-event-time {
+    position: absolute;
+    left: 50%;
+    margin-left: 35px;
+    margin-top: -37px;
+  }
+  .timeline-event input:checked + label .timeline-event-item {
+    right: 0 !important;
+  }
+  :hover .timeline-event-item {
+    left: 0 !important;
+  }
+}

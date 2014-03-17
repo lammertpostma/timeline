@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Lammert Postma - Simple css timeline</title>
+        <meta name="description" content="Personal portfolio">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+
+		<div class="wrapper">
+			<ol class="timeline" data-bind="foreach: events">
+				
+			    <li class="timeline-event" data-bind="attr: { 'data-type' : type }">
+					<input type="radio" id="item_1" name="selectedItem" data-bind="attr: { id : 'item_'+$index()}"/>
+			        <label for="item_1" data-bind="attr: { for : 'item_'+$index() }">
+				        <div class="timeline-event-icon"></div>
+				        <div class="timeline-event-item">
+							<time class="timeline-event-time" data-bind="text: date"></time>
+				            <h2 class="timeline-event-item-header" data-bind="text: title"></h2>
+							<div class="timeline-event-item-body" data-bind="html: body"></div>
+				        </div>
+					</label>
+			    </li>
+				
+			</ol>
+		</div>
+    </body>
+
+	<!-- SCRIPT -->
+	<script src="vendors/knockout.js"></script>
+	<script src="models/view-model.js"></script>
+
+</html>
